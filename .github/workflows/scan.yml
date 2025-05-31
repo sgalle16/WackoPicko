@@ -11,5 +11,11 @@ jobs:
       - name: Run skims scan
         uses: docker://docker.io/fluidattacks/skims:latest
         with:
-             args: skims --strict scan .
+             args: skims scan ./config.yml
 
+      - name: Upload report results
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: fluid-scanner-results
+          path: fluid-scanner-results.csv 

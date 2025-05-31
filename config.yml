@@ -1,0 +1,11 @@
+namespace: WackoPicko
+output:
+  file_path: ./fluid-scanner-results.csv
+  format: CSV
+working_dir: .
+language: EN
+file_size_limit: false
+strict: true
+sast:
+  include:
+    - .
